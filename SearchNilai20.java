@@ -1,24 +1,30 @@
 import java.util.Scanner;
-
-/**
- * SearchNilai20
- */
 public class SearchNilai20 {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] arrNilai = {80, 85, 78, 96, 90, 82, 86} ;
-        int key = 90;
-        int hasil = 0;
+        
+        int jmlMhs = 0;
+        System.out.print("Masukkan banyaknya nilai yang akan diinput: ");
+        jmlMhs = sc.nextInt();
+        
+        int[] nilaiMhs = new int[jmlMhs];
+        int key = 85, hasil = 0;
 
-        for (int i = 0; i< arrNilai.length; i++){
-            if (key == arrNilai[i]) {
+        for (int i = 0; i < nilaiMhs.length; i++) {
+            System.out.print("Masukkan nilai mahasiswa ke-" + (i+1) + " : ");
+            nilaiMhs[i] = sc.nextInt();
+        }
+            for (int i = 1; i < nilaiMhs.length; i++) {
+                System.out.println("Masukkan nilai yang ingin dicari: " + key);
+            if (key == nilaiMhs[i]) {
+                System.out.println();
+                System.out.println("Nilai " + key + " ketemu, merupakan nilai mahasiswa ke-" + hasil);
                 hasil = i;
+            } else {
+                System.out.println();
+                System.out.println("Nilai yang dicari tidak ditemukan");
                 break;
             }
         }
-        System.out.println();
-        System.out.println("Nilai "+key+"ketemu di indeks ke-" +hasil);
-        System.out.println();
     }
 }
